@@ -29,14 +29,14 @@ curl -Ls https://api.github.com/repos/ReFirmLabs/binwalk/releases/latest | \
   echo y | ./deps.sh | true
 sudo apt-get install -y mtd-utils gzip bzip2 tar arj lhasa p7zip p7zip-full cabextract fusecram cramfsswap squashfs-tools sleuthkit default-jdk cpio lzop lzma srecord zlib1g-dev liblzma-dev liblzo2-dev unzip
 
-git clone https://github.com/devttys0/sasquatch && (cd sasquatch && ./build.sh && cd -)
+git clone https://github.com/river-li/sasquatch && (cd sasquatch && ./build.sh && cd -)
 git clone https://github.com/devttys0/yaffshiv && (cd yaffshiv && sudo python3 setup.py install && cd -)
 cd - # back to root of project
 sudo cp core/unstuff /usr/local/bin/
 
 python3 -m pip install python-lzo cstruct ubi_reader
-sudo apt-get install -y python3-magic openjdk-8-jdk unrar
-python3 -m pip install git+https://github.com/ReFirmLabs/binwalk@772f271 # Release 2.3.1
+sudo apt-get install -y python3-magic openjdk-11-jdk unrar
+git clont https://github.com/river-li/binwalk && (cd binwalk && sudo python3 setup.py install && cd -)
 
 # for analyzer, initializer
 sudo apt-get install -y python3-bs4
